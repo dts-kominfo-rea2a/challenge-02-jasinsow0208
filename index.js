@@ -24,6 +24,15 @@ function lakukanLooping(arrPegawai) {
       Contoh: ["Aisyah Nirmala", "Mansur Faisal", ...]
   */
   let hasilLooping = null;
+  let convertArrPegawai = Array.from(dataYangAkanDilooping);
+  let jmlPegawai = convertArrPegawai.length;
+
+  hasilLooping = [];
+  for (let i = 0; i < jmlPegawai; i++) {
+    hasilLooping.push(
+      convertArrPegawai[i].namaDepan + " " + convertArrPegawai[i].namaBelakang
+    );
+  }
 
   /*
     TODO 2: Buatlah sebuah variabel bernama "jumlahPria"
@@ -37,6 +46,16 @@ function lakukanLooping(arrPegawai) {
   */
   let jumlahWanita = null;
 
+  jumlahPria = 0;
+  jumlahWanita = 0;
+  for (let i = 0; i < jmlPegawai; i++) {
+    if (convertArrPegawai[i].jenisKelamin == "M") {
+      jumlahPria += 1;
+    } else {
+      jumlahWanita += 1;
+    }
+  }
+
   /*
     TODO 4: Buatlah sebuah variabel bernama "komentar"
       yang akan mengomentari apakah lebih banyak Pria atau Wanita
@@ -49,6 +68,14 @@ function lakukanLooping(arrPegawai) {
         "Jumlah Pria dan Wanita berimbang"
   */
   let komentar = null;
+
+  if (jumlahPria > jumlahWanita) {
+    komentar = "Jumlah Pria lebih banyak dari Wanita";
+  } else if (jumlahPria == jumlahWanita) {
+    komentar = "Jumlah Pria dan Wanita berimbang";
+  } else {
+    komentar = "Jumlah Wanita lebih banyak dari Pria";
+  }
 
   // ! JANGAN DIMODIFIKASI
   return {
